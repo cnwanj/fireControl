@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- 安装点 -->
+<hibernate-mapping>
+	<class name="com.gxuwz.fireControl.model.entity.InstallPoint"
+		table="install_point">
+		<id name="insId" column="ins_id" length="20">
+			<generator class="native"></generator>
+		</id>
+		<property name="insCode" column="ins_code" length="50" />
+		<property name="insName" column="ins_name" length="50" />
+		<property name="insAddress" column="ins_address" length="150" />
+
+		<!-- 二级管辖域和安装点：多对一 -->
+		<many-to-one name="as" class="com.gxuwz.fireControl.model.entity.ManageAreaSecond" column="as_id"></many-to-one>
+
+	</class>
+</hibernate-mapping>

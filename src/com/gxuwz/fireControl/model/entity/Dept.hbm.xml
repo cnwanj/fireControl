@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- 单位公司 -->
+<hibernate-mapping>
+    <class name="com.gxuwz.fireControl.model.entity.Dept" table="dept" lazy="false">
+        <id name="deptId" column="dept_id" length="50"/>
+        <property name="deptName" column="dept_name" length="50"/>
+        <property name="deptAddress" column="dept_address" length="150"/>
+        <property name="userId" column="user_id" length="50"/>
+    </class>
+</hibernate-mapping>

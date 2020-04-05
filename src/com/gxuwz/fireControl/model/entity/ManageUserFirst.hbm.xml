@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<!-- 一级管辖员 -->
+<hibernate-mapping>
+    <class name="com.gxuwz.fireControl.model.entity.ManageUserFirst" table="Manage_user_first">
+        <id name="ufId" column="uf_id" length="50"/>
+        <property name="ufName" column="uf_name" length="50"/>
+        <property name="loginName" column="login_name" length="50"/>
+        <property name="loginPwd" column="login_pwd" length="50"/>
+        <property name="ufPhone" column="uf_phone" length="50"/>
+        <property name="ufType" column="uf_type" length="5"/>
+        <!-- 单位管理员拥有多个一级管辖员 -->
+        <many-to-one name="deptUser" class="com.gxuwz.fireControl.model.entity.DeptUser" column="user_id"/> 
+        <!-- 一级管辖域和一级管辖员 -->
+        <many-to-one name="af" class="com.gxuwz.fireControl.model.entity.ManageAreaFirst" column="af_id"/> 
+    </class>
+</hibernate-mapping>

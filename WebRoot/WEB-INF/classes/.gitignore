@@ -1,0 +1,10 @@
+/.struts-app.mex
+/.struts-web.mex
+/.struts.mex
+/SMSApi.properties
+/com/
+/conf/
+/struts-app.xml
+/struts-web.xml
+/struts.xml
+/util/

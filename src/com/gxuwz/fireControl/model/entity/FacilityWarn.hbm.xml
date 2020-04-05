@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- 设备报警信息 -->
+<hibernate-mapping>
+    <class name="com.gxuwz.fireControl.model.entity.FacilityWarn" table="facility_warn">
+        <id name="warnId" column="warn_id" length="50">
+        	<generator class="native"></generator>
+        </id>
+        <property name="warnTime" column="warn_time" length="50"/>
+        <!-- 设备报警信息和设备：多对一关系 -->
+        <many-to-one name="fac" class="com.gxuwz.fireControl.model.entity.Facility" column="fac_id"/> 
+    </class>
+</hibernate-mapping>

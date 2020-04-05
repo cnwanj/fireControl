@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<!-- 单位管理员 -->
+    <class name="com.gxuwz.fireControl.model.entity.DeptUser" table="dept_user">
+    	<!-- 主键生成策略 因为主键跟外键是同一个，所以直接在这里申明该主键就是外键 -->
+        <id name="userId" column="user_id" length="50"/>
+        <property name="userName" column="dept_name" length="50"/>
+        <property name="loginName" column="login_name" length="50"/>
+        <property name="loginPwd" column="login_pwd" length="50"/>
+        <property name="userPhone" column="user_phone" length="15"/>
+        <!-- 单位（公司）和单位管理员 -->
+        <many-to-one name="dept" class="com.gxuwz.fireControl.model.entity.Dept" column="dept_id"></many-to-one>
+    </class>
+</hibernate-mapping>

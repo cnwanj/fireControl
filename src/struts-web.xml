@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<!-- 系统模块 -->
+	<package name="sys" extends="json-default" namespace="/sys">
+		<!-- 人员登录信息模块 -->
+		<action name="sysUser_*" class="com.gxuwz.fireControl.action.SysUserAction" method="{1}">
+			<result type="json">
+				<param name="root">res</param>
+			</result>
+		</action>
+		<!-- 单位信息管理信息模块 -->
+		<action name="dept_*" class="com.gxuwz.fireControl.action.DeptAction" method="{1}">
+			<result type="json">
+				<param name="root">res</param>
+			</result>
+		</action>
+		<!-- 单位信息管理信息模块 -->
+		<action name="deptUser_*" class="com.gxuwz.fireControl.action.DeptUserAction" method="{1}">
+			<result type="json">
+				<param name="root">res</param>
+			</result>
+		</action>
+		<!-- 二级管辖员信息模块 -->
+		<action name="manageUserSecond_*" class="com.gxuwz.fireControl.action.ManageUserSecondAction" method="{1}">
+			<result type="json">
+				<param name="root">res</param>
+			</result>
+		</action>
+		<!-- 二级管辖域信息模块 -->
+		<action name="manageAreaSecond_*" class="com.gxuwz.fireControl.action.ManageAreaSecondAction" method="{1}">
+			<result type="json">
+				<param name="root">res</param>
+			</result>
+		</action>
+		<!-- 一级管辖员信息模块 -->
+		<action name="manageUserFirst_*" class="com.gxuwz.fireControl.action.ManageUserFirstAction" method="{1}">
+			<result type="json">
+				<param name="root">res</param>
+			</result>
+		</action>
+		<!-- 一级管辖域信息模块 -->
+		<action name="manageAreaFirst_*" class="com.gxuwz.fireControl.action.ManageAreaFirstAction" method="{1}">
+			<result type="json">
+				<param name="root">res</param>
+			</result>
+		</action>
+		<!-- 日记信息模块 -->
+		<action name="sysLog_*" class="com.gxuwz.fireControl.action.SysLogAction" method="{1}">
+			<result type="json">
+				<param name="root">res</param>
+			</result>
+		</action>
+		<!--安装点管理模块 -->
+		<action name="installPoint_*" class="com.gxuwz.fireControl.action.InstallPointAction" method="{1}">
+			<result type="json">
+				<param name="root">res</param>
+			</result>
+		</action>
+		<!--报警联系人信息模块 -->
+		<action name="warnUser_*" class="com.gxuwz.fireControl.action.WarnUserAction" method="{1}">
+			<result type="json">
+				<param name="root">res</param>
+			</result>
+		</action>
+		<!--设备信息模块 -->
+		<action name="facility_*" class="com.gxuwz.fireControl.action.FacilityAction" method="{1}">
+			<result type="json">
+				<param name="root">res</param>
+			</result>
+		</action>
+		
+		<!--系统设置 -->
+		<action name="*_*" class="com.gxuwz.fireControl.action.{1}Action" method="{2}">
+			<result name="success">${forwardView}</result>
+		</action>
+	</package>
+	
+<!-- ===============================上部分为消防只能设备关系统，下部分为其他===================================== -->
+
+	<!-- 普通操作（不纳入权限拦截的） -->
+	<!-- <package name="front" extends="base" namespace="/front">
+		系统设置
+		<action name="*_*" class="com.gxuwz.PangGuangyao.business.action.web.front.{1}Action" method="{2}">
+			<result name="success">${forwardView}</result>
+		</action>
+	</package>
+	
+	定义系统设置模块
+	<package name="biz" extends="base" namespace="/biz">
+	
+		系统设置
+		<action name="*_*" class="com.gxuwz.PangGuangyao.business.action.web.{1}Action" method="{2}">
+			<result name="success">${forwardView}</result>
+			后续改为以下方式
+			<result name="*" type="direct">通过Action直接返回，这一行无需修改</result>
+		</action>
+	</package>
+	
+	定义系统设置模块
+	<package name="weixin" extends="base" namespace="/">
+		系统设置
+		<action name="*" class="com.gxuwz.PangGuangyao.weixin.action.web.{1}Action">
+			<result name="success">${forwardView}</result>
+			后续改为以下方式
+			<result name="*" type="direct">通过Action直接返回，这一行无需修改</result>
+		</action>
+	</package>
+	
+	导出excel
+	<package name="excel" extends="base" namespace="/excel">
+		<action name="*_*" class="com.gxuwz.PangGuangyao.business.action.web.ExportExcelAction"  method="{2}">
+			<result name="success" type="stream">
+				<param name="contentType">application/vnd.ms-excel</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="inputName">excelStream</param>
+			</result>
+		</action>
+	</package> -->
+
+</struts>    
